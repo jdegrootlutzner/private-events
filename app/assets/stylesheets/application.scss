@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+ @import 'bulma';
+
+ article.tile:hover{
+     background-color: $light;
+ }
+
+ nav.level {
+     background-color: $info;
+ }
+
+
+
+
+ h2.title{
+
+    border-bottom: $yellow double thick;
+ }
+ 
+ p.event.title{
+    color: $link;
+
+ }
+
+p.event.subtitle {
+    font-weight: bold;
+}
+
+ p.event.body {
+    font-style: italic;
+    color: black;
+ }
+ 
+ p.title.add-event {
+    color: $primary;
+
+ }
+
+ p.event.count {
+     color: $link
+ }
+
+ .border{
+    border: $grey-lighter thin solid;
+    border-radius: 8px;
+ }

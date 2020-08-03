@@ -28,8 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Added by me
+# auth
 gem 'devise'
-
+# style
+gem 'bulma-rails', '~> 0.9.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

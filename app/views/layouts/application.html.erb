@@ -4,14 +4,73 @@
     <title>PrivateEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end%>
+    <% if flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end%>
+
+    <header>
+      <nav class="level px-3 py-1">
+        <div class="level-left">
+
+        <p class="level-item has-text-centered">
+        <%= link_to "Upcoming Events", root_path, class: "button is-primary"%>
+        </p>
+        <p class="level-item has-text-centered">
+        <%= link_to "Archived Events", root_path, class: "button is-primary"%>
+
+        </p>
+        </div>
+
+        <%= link_to root_path do%>
+        <figure class="has-text-centered">
+
+        <img src="/images/calendar.svg" alt="Logo" width="60" height="60">
+                </figure>
+
+        <%end%>
+        <div class="level-right">
+        <% if user_signed_in? %>
+        <p class="level-item has-text-centered">
+          <%= link_to current_user.email, edit_user_registration_path, class: "button is-primary" %>
+
+        </p>
+        <p class="level-item has-text-centered">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button is-primary" %>
+
+        </p>
+        <% else %>
+        <p class="level-item has-text-centered">
+               <%= link_to "Sign In", new_user_session_path, class: "button is-primary" %>
+
+        </p>
+         <p class="level-item has-text-centered">
+            <%= link_to "Sign Up", new_user_registration_path, class: "button is-primary" %>
+
+        </p>
+        <%end%>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
-  </body>
+  <footer class="footer mt-6">
+    <div class="content is-whiter">
+      <%# <p>
+      Copyright Julian DeGroot-Lutzner</p> %>
+      
+    </div>
+  </footer>
+ </body>
+
 </html>

@@ -1,0 +1,76 @@
+<section class="section px-6">
+    <div class="container">
+        <h2 class="title is-info">Upcoming Events</h2>
+    </div>
+</section>
+<section class="px-6">
+<div class="container">
+    <div class="center">
+<% $i = 1 %>
+<div class="tile is-ancestor">
+
+<article class="tile is-parent is-3 box mx-1 mt-2 mb-6 border">
+    <div class="column">
+     <%= link_to new_event_path do %>
+     <div>
+            <p class="title add-event">
+                    Add Your Event!
+        </p>
+     </div>
+    <% end %>
+    </div>
+</article>
+  <% @events.each do |event| %>
+    
+    <% if ($i%4 == 0)%>
+    <div class="tile is-ancestor">
+    <% end %>
+        <article class="tile is-parent is-3 box mx-1 my-2 border">
+        <div class="column">
+        <%= link_to event do %>
+            <div>
+                <p class="title event">
+                    <%= event.title %>
+                </p>
+                <p class="subtitle event">
+                    <%= event.date.strftime("%b %d, %Y") %>
+                </p>
+                <p class="count event">
+                    <%= event.attendees.count%> People Going
+                </p>
+
+                <p class="body event">
+                    <%= event.description %>
+                </p>
+
+            </div>
+        <% end %>
+        <div class="level has-centered-text border mt-4 pt-1">
+            <nav class="level-item">
+                <%= link_to root_path, class: "px-3" do%>
+                <img src="/images/yes-mark.png" alt="Check Mark" width="20" height="20">
+                <% end %>
+                <%= link_to root_path, class: "px-2" do%>
+                <img src="/images/maybe-mark.png" alt="Check Mark" width="20" height="20">
+                <% end %>
+                <%= link_to root_path, class: "px-3" do%>
+                <img src="/images/no-mark.png" alt="Check Mark" width="20" height="20">
+                <% end %>
+            
+            
+            </nav>
+        </div>
+        </div>
+        </article>
+    <% $i += 1 %>
+    <% if ($i%4 == 0 && $i!=0)%>
+    </div>
+
+    <%end%>
+  <% end %>
+<% if ($i%4 !=0) %>
+  </div>
+<%end%>
+</div>
+</div>
+</section>

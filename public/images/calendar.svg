@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(0 947.64)">
+  <g transform="matrix(3.5942 0 0 3.5942 96.865 -2816.5)" fill-rule="evenodd">
+   <circle transform="rotate(-90)" cx="-796.79" cy="254.58" r="247.5" fill="#fff" stroke="#045" stroke-linecap="round" stroke-width="5"/>
+   <g transform="matrix(8.7167 0 0 8.3856 -1435 -5453.7)">
+    <rect x="178.69" y="730.84" width="32.8" height="31.8" ry="4.6341" fill="#008080" stroke="#045" stroke-linecap="round" stroke-width=".14036"/>
+    <rect x="180.69" y="738.09" width="28.8" height="22.555" ry="3.2869" fill="#0a8" stroke="#045" stroke-linecap="round" stroke-width=".14036"/>
+    <rect x="183.05" y="743.93" width="2" height="2.3164" fill="#5df"/>
+    <rect x="183.05" y="748.24" width="2" height="2.3164" fill="#5df"/>
+    <rect x="183.05" y="752.56" width="2" height="2.3164" fill="#5df"/>
+    <rect x="183.24" y="756.87" width="2" height="2.3164" fill="#5df"/>
+    <rect x="187.43" y="743.93" width="2" height="2.3164" fill="#5df"/>
+    <rect x="187.43" y="748.24" width="2" height="2.3164" fill="#5df"/>
+    <rect x="187.43" y="752.56" width="2" height="2.3164" fill="#5df"/>
+    <rect x="187.62" y="756.87" width="2" height="2.3164" fill="#5df"/>
+    <rect x="191.81" y="743.79" width="2" height="2.3164" fill="#5df"/>
+    <rect x="191.81" y="748.1" width="2" height="2.3164" fill="#5df"/>
+    <rect x="191.81" y="752.42" width="2" height="2.3164" fill="#5df"/>
+    <rect x="191.99" y="756.73" width="2" height="2.3164" fill="#5df"/>
+    <rect x="191.81" y="739.48" width="2" height="2.3164" fill="#5df"/>
+    <rect x="196.18" y="743.93" width="2" height="2.3164" fill="#5df"/>
+    <rect x="196.18" y="748.24" width="2" height="2.3164" fill="#5df"/>
+    <rect x="196.18" y="752.56" width="2" height="2.3164" fill="#5df"/>
+    <rect x="196.37" y="756.87" width="2" height="2.3164" fill="#5df"/>
+    <rect x="196.18" y="739.62" width="2" height="2.3164" fill="#5df"/>
+    <rect x="200.56" y="744.07" width="2" height="2.3164" fill="#5df"/>
+    <rect x="200.56" y="748.39" width="2" height="2.3164" fill="#5df"/>
+    <rect x="200.56" y="752.7" width="2" height="2.3164" fill="#5df"/>
+    <rect x="200.75" y="757.01" width="2" height="2.3164" fill="#5df"/>
+    <rect x="200.56" y="739.76" width="2" height="2.3164" fill="#5df"/>
+    <rect x="204.94" y="744.07" width="2" height="2.3164" fill="#5df"/>
+    <rect x="204.94" y="748.39" width="2" height="2.3164" fill="#5df"/>
+    <rect x="204.94" y="752.7" width="2" height="2.3164" fill="#5df"/>
+    <rect x="205.13" y="757.01" width="2" height="2.3164" fill="#5df"/>
+    <rect x="204.94" y="739.76" width="2" height="2.3164" fill="#5df"/>
+    <ellipse cx="186.44" cy="734.47" rx="2.4" ry="2.4" fill="#045" stroke="#045" stroke-linecap="round" stroke-width=".14036"/>
+    <circle cx="204.54" cy="734.47" r="2.4" fill="#045" stroke="#045" stroke-linecap="round" stroke-width=".14036"/>
+    <rect x="184.35" y="725.86" width="4" height="10.798" ry="2.2754" fill="#045"/>
+    <rect x="202.6" y="725.59" width="4" height="10.798" ry="2.2754" fill="#045"/>
+   </g>
+  </g>
+ </g>
+</svg>
