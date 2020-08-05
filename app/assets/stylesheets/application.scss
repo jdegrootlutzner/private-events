@@ -58,3 +58,21 @@ p.event.subtitle {
     border: $grey-lighter thin solid;
     border-radius: 8px;
  }
+
+
+.border-accepted {
+   border: $success thin solid;
+   border-radius: 8px;
+}
+
+.border-denied {
+   border: $danger thin solid;
+   border-radius: 8px;
+}
+
+
+.border-neutral {
+   border: $link thin solid;
+   border-radius: 8px;
+}
+
