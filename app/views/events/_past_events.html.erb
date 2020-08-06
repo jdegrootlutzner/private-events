@@ -1,40 +1,16 @@
-<section class="section pb-6">
+<% $i = 0 %>
+
+<section class="section px-6">
     <div class="container">
         <h2 class="title is-info">Archived Events</h2>
     </div>
 </section>
-<section>
+<section class="px-6">
 <div class="container">
     <div class="center">
-<% $i = 0 %>
 
-  <% @events.each do |event| %>
-    
-    <% if ($i%4 == 0)%>
-    <div class="tile is-ancestor">
-    <% end %>
-        <%= link_to event, class: "tile is-parent is-3" do %>
-            <article class="tile is-child box">
-                <p class="title event">
-                    <%= event.title %>
-                </p>
-                <p class="subtitle event">
-                    <%= event.date.strftime("%b %d, %Y") %>
-                </p>
-                <p class="body event">
-                    <%= event.description %>
-                </p>
-            </article>
-        <% end %>
+<%= render partial: 'events_feed', locals: {events = @past_events, i: 0}%>
 
-    <% if ($i%3 == 0 && $i!=0)%>
-        </div>
-    <%end%>
-    <% $i += 1 %>
-  <% end %>
-<% if ($i%4 !=0) %>
-  </div>
-<%end%>
+ </div>
 </div>
-</div>
-</section >
+</section>

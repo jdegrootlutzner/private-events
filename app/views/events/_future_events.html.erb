@@ -20,93 +20,9 @@
     <% end %>
     </div>
 </article>
-  <% @events.each do |event| %>
-    
-    <% if ($i%4 == 0)%>
-    <div class="tile is-ancestor">
-    <% end %>
 
-        <% @attendance =  Attendance.find_by(attended_event: event.id, attendee: current_user.id)%>
+<%= render 'events_feed', locals: {@future_events, i: 1}%>
 
-
-        <article class="tile is-parent is-3 box mx-1 my-2 <%= 'border-neutral' if @attendance.nil?%> 
-                        <%= 'border-accepted' if (!@attendance.nil? && @attendance.status) %> 
-                        <%= 'border-denied' if (!@attendance.nil? && !@attendance.status) %>  %">
-        <div class="column">
-        <%= link_to event do %>
-            <div>
-                <p class="title event">
-                    <%= event.title %>
-                </p>
-                <p class="subtitle event">
-                    <%= event.date.strftime("%b %d, %Y") %>
-                </p>
-                <p class="count event">
-                    <%= event.attendances.where(status: true).count%> People Going
-                </p>
-
-                <p class="body event">
-                    <%= event.description %>
-                </p>
-
-            </div>
-        <% end %>
-        <div class="level has-centered-text border mt-4 pt-1 <%= 'border-neutral' if @attendance.nil?%> 
-                        <%= 'border-accepted' if (!@attendance.nil? && @attendance.status) %> 
-                        <%= 'border-denied' if (!@attendance.nil? && !@attendance.status) %> ">
-            <nav class="level-item">
-                <% if !@attendance.nil? && @attendance.status%>
-                <img src="/images/yes-mark.png" alt="Check Mark" width="20" height="20">
-                <% else %>
-                    <%= form_with url: event_attendances_path(current_user.id, event.id), method: :post do |f|%>
-                    <%= hidden_field_tag(:status, true) %>
-                    <%= hidden_field_tag(:user_id, current_user.id) %>
-                    <%= hidden_field_tag(:attended_event_id, event.id) %>
-                    <%= f.submit "Create", :type => :image, :src => "/images/yes-mark.png", :width => "20" %>
-                    <% end %>
-                <% end %>
-                <% if @attendance.nil? %>
-                <%= link_to root_path, class: "px-2" do%>
-                <img src="/images/maybe-mark.png" alt="Check Mark" width="20" height="20">
-                <% end %>
-                <% else %>
-                    hello
-                    <%= form_with url: event_attendance_path(current_user.id, event.id), method: :delete do |f|%>
-                    <%= hidden_field_tag(:user_id, current_user.id) %>
-                    <%= f.submit "Delete", :type => :image, :src => "/images/maybe-mark.png", :width => "20" %>
-                    <% end %>
-                <% end %>
-                <% if !@attendance.nil? && !@attendance.status%>
-                <img src="/images/no-mark.png" alt="Check Mark" width="20" height="20">
-
-                <% else %>
-                    <%= form_with url: event_attendances_path(current_user.id, event.id), method: :post do |f|%>
-                    <%= hidden_field_tag(:status, false) %>
-                    <%= hidden_field_tag(:user_id, current_user.id) %>
-                    <%= hidden_field_tag(:attended_event_id, event.id) %>
-
-                    <%= f.submit "Create", :type => :image, :src => "/images/no-mark.png", :width => "20" %>
-                    <% end %>
-                <% end %>
-   
-
- 
-
-            
-            
-            </nav>
-        </div>
-        </div>
-        </article>
-    <% $i += 1 %>
-    <% if ($i%4 == 0 && $i!=0)%>
-    </div>
-
-    <%end%>
-  <% end %>
-<% if ($i%4 !=0) %>
-  </div>
-<%end%>
-</div>
+ </div>
 </div>
 </section>

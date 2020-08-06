@@ -1,2 +1,47 @@
-<%= render 'future_events' %>
-<%= render 'past_events' %>
+
+<section id="future" class="section px-6">
+    <div class="container">
+        <h2 class="title is-info">Upcoming Events</h2>
+    </div>
+</section>
+<section class="px-6">
+<div class="container">
+    <div class="center">
+<% $i = 1 %>
+<div class="tile is-ancestor">
+
+<article class="tile is-parent is-3 box mx-1 mt-2 mb-6 border">
+    <div class="column">
+     <%= link_to new_event_path do %>
+     <div>
+            <p class="title add-event">
+                    Add Your Event!
+        </p>
+     </div>
+    <% end %>
+    </div>
+</article>
+
+<%= render partial: 'events_feed', locals: {events: @future_events, i: 1}%>
+
+ </div>
+</div>
+</section>
+
+
+<% $i = 0 %>
+
+<section id="past" class="section px-6">
+    <div class="container">
+        <h2 class="title is-info">Archived Events</h2>
+    </div>
+</section>
+<section class="px-6">
+<div class="container">
+    <div class="center">
+
+<%= render partial: 'events_feed', locals: {events: @past_events, i: 0}%>
+
+ </div>
+</div>
+</section>

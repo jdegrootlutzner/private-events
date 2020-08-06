@@ -33,16 +33,21 @@
  
  p.event.title{
     color: $link;
+    word-wrap: break-word;
+
 
  }
 
 p.event.subtitle {
     font-weight: bold;
+    word-wrap: break-word;
+
 }
 
  p.event.body {
     font-style: italic;
     color: black;
+    
  }
  
  p.title.add-event {
@@ -76,3 +81,16 @@ p.event.subtitle {
    border-radius: 8px;
 }
 
+
+#commit {
+   border: $danger thin solid;
+}
+
+div.wrap {
+   overflow-wrap: anywhere;
+
+}
+
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}

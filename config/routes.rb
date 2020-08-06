@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
   root 'events#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'future_events', to: 'events#future'
+  get 'past_events', to: 'events#past'
 end

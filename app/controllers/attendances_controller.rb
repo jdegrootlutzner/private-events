@@ -1,13 +1,12 @@
 class AttendancesController < ApplicationController
+  before_action :authenticate_user!
+
 
   def create
     @event = Event.find(attendance_params[:attended_event_id])
     if already_signed_up
-      puts("lookhere")
-      puts(attendance_params[:attended_event_id])
       @attendance = Attendance.find_by(attendee_id: attendance_params[:user_id],
                                        attended_event_id: attendance_params[:attended_event_id])
-      puts(attendance_params[:attended_event_id])
       if (attendance_params[:status].to_s.downcase == 'true') == @attendance.status
         if @attendance.status
           flash[:notice] = "You already marked that you're attending #{@event.title}!"
